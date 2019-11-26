@@ -1,0 +1,39 @@
+directories:
+  output: dist/
+  buildResources: build
+  app: .
+files:
+  - filter:
+      - dist/**/*
+      - package.json
+productName: taps
+appId: com.example.taps
+asar: true
+protocols:
+  name: tapsElectron
+  schemes:
+    - tapselectron
+mac:
+  target:
+    - default
+  icon: ./build/icons/Icon.icns
+dmg:
+  title: HelloElectron
+  icon: ./build/icons/Icon.icns
+win:
+  target:
+    - zip
+    - nsis
+  icon: ./build/icons/Icon.ico
+linux:
+  target:
+    - AppImage
+    - deb
+    - rpm
+    - zip
+    - tar.gz
+  icon: ./build/icons/icon.icns
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+electronVersion: 2.0.18
